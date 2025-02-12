@@ -2,6 +2,8 @@
 
 /* print Fahrenheit-Celcius table
  * for fahr = 0, 20, ..., 300 */
+int ftoc(int f);
+
 int main() {
     int fahr, celsius;
     int lower, upper, step;
@@ -12,8 +14,12 @@ int main() {
 
     fahr = lower;
     while (fahr <= upper) {
-        celsius = 5 * (fahr-32) / 9;
+        celsius = ftoc(fahr);
         printf("%d\t%d\n", fahr, celsius);
         fahr = fahr + step;
     }
+}
+
+int ftoc(int f) {
+    return 5 * (f-32) / 9;
 }
